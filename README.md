@@ -56,6 +56,12 @@ You can also open it in [MCP Inspector](https://github.com/modelcontextprotocol/
 - **Read-only annotations.** `readOnlyHint: true`, `destructiveHint: false`, `openWorldHint: false`.
 - **Nothing is logged.** The server never writes the answers anywhere.
 
+## About the method
+
+The Ladder method, its structure and pilot data are described in a preprint (in Russian):
+
+Li, A. (2026). Онлайн-самопроверка внутренних препятствий на пути к цели: структура, операционализация и пилотные данные методики «Лестница». Zenodo. https://doi.org/10.5281/zenodo.23960425
+
 ## Author
 
 Aizhan Li, author of the Ladder method, [108psy.com](https://108psy.com/en).
