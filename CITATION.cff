@@ -1,0 +1,35 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "chatgpt-plugin-one-tool: a minimal MCP server with one read-only tool, and how a ChatGPT plugin passed OpenAI review"
+abstract: "Minimal Model Context Protocol server for Cloudflare Workers with one read-only tool that scores the WHO-5 Well-Being Index, plus a step-by-step account of how the Ladder plugin passed OpenAI review for the ChatGPT plugin catalog."
+type: software
+authors:
+  - family-names: Li
+    given-names: Aizhan
+    orcid: "https://orcid.org/0009-0002-5669-0445"
+    affiliation: "108psy.com"
+repository-code: "https://github.com/liaizhan/chatgpt-plugin-one-tool"
+url: "https://108psy.com/en"
+license: MIT
+version: 1.0.0
+date-released: 2026-11-05
+keywords:
+  - MCP
+  - Model Context Protocol
+  - ChatGPT plugin
+  - OpenAI Apps SDK
+  - Cloudflare Workers
+  - WHO-5
+  - well-being
+references:
+  - type: article
+    title: "Онлайн-самопроверка внутренних препятствий на пути к цели: структура, операционализация и пилотные данные методики «Лестница»"
+    authors:
+      - family-names: Li
+        given-names: Aizhan
+        orcid: "https://orcid.org/0009-0002-5669-0445"
+    year: 2026
+    publisher:
+      name: Zenodo
+    doi: 10.5281/zenodo.23960425
+    notes: "Preprint"
