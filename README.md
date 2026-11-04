@@ -1,5 +1,7 @@
 # chatgpt-plugin-one-tool
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23961717.svg)](https://doi.org/10.5281/zenodo.23961717)
+
 A minimal MCP server with one read-only tool, written to show how small a ChatGPT plugin server can be.
 No framework, no dependencies, no sign-in, no storage. About 150 lines of code and 10 tests.
 

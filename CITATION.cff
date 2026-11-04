@@ -11,6 +11,7 @@ authors:
 repository-code: "https://github.com/liaizhan/chatgpt-plugin-one-tool"
 url: "https://108psy.com/en"
 license: MIT
+doi: 10.5281/zenodo.23961717
 version: 1.0.0
 date-released: 2026-11-05
 keywords:
