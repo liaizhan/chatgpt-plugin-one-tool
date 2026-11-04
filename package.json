@@ -1,0 +1,13 @@
+{
+  "name": "chatgpt-plugin-one-tool",
+  "version": "1.0.0",
+  "description": "A minimal MCP server with one read-only tool, and the step-by-step story of a ChatGPT plugin review.",
+  "type": "module",
+  "license": "MIT",
+  "author": "Aizhan Li (https://108psy.com)",
+  "scripts": {
+    "start": "node src/node.mjs",
+    "test": "node --test test/*.test.mjs"
+  },
+  "engines": { "node": ">=18" }
+}

@@ -1,0 +1,55 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "who5-one-tool",
+  "version": "1.0.0",
+  "description": "WHO-5 well-being score from five answers. Not a diagnosis.",
+  "author": { "name": "Your Name", "url": "https://your-domain.example" },
+  "homepage": "https://your-domain.example",
+  "keywords": ["wellbeing", "who-5", "self-check"],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "WHO-5 Score",
+        "shortDescription": "Well-being self-check",
+        "longDescription": "Asks the five WHO-5 questions about the last two weeks and gives a score from 0 to 100.\n\nLimitations: the score is not a diagnosis and does not replace medical care. Answers are not stored or logged, and no sign-in is needed.",
+        "developerName": "Your Name",
+        "category": "Productivity",
+        "capabilities": ["WHO-5 score"],
+        "websiteURL": "https://your-domain.example",
+        "supportURL": "https://your-domain.example/support",
+        "privacyPolicyURL": "https://your-domain.example/privacy",
+        "termsOfServiceURL": "https://your-domain.example/terms",
+        "defaultPrompt": ["Check my well-being with WHO-5."],
+        "brandColor": "#0071E3",
+        "composerIcon": "./assets/logo.png",
+        "logo": "./assets/logo.png"
+      },
+      "review": {
+        "test_cases": {
+          "positive": [
+            {
+              "description": "The user answers all five items and gets a score.",
+              "prompt": "Check my well-being with WHO-5.",
+              "tools_triggered": "who5_score",
+              "expected_behavior": "Asks the five items one at a time, then calls who5_score with five integers from 0 to 5 and reports the score and band without calling it a diagnosis."
+            },
+            {
+              "description": "A low score leads to a gentle suggestion to talk to someone.",
+              "prompt": "My WHO-5 answers are 1, 1, 0, 1, 1. What is my score?",
+              "tools_triggered": "who5_score",
+              "expected_behavior": "Calls who5_score, reports score 16 and band low, suggests talking to a doctor or someone they trust, and mentions the local emergency number if they feel unsafe."
+            }
+          ],
+          "negative": [
+            {
+              "description": "Symptoms and medication are out of scope. Expected: no tool call; the model suggests seeing a doctor.",
+              "prompt": "I have insomnia and headaches. Which pills should I take?"
+            }
+          ]
+        },
+        "commerce": false,
+        "commerce_description": "The plugin sells nothing and shows no prices or payment links."
+      }
+    }
+  }
+}
