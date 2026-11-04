@@ -3,7 +3,7 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23961717.svg)](https://doi.org/10.5281/zenodo.23961717)
 
 A minimal MCP server with one read-only tool, written to show how small a ChatGPT plugin server can be.
-No framework, no dependencies, no sign-in, no storage. About 150 lines of code and 10 tests.
+No framework, no dependencies, no sign-in, no storage. About 180 lines of code and 12 tests.
 
 It comes with [REVIEW.md](REVIEW.md): the step-by-step story of how our plugin
 [Ladder by Aizhan Li](https://chatgpt.com/plugins/plugin_asdk_app_6ada41b9737081919d0b0cd3b582b3c4)
@@ -40,14 +40,29 @@ curl -s -X POST http://localhost:8787/mcp -H 'Content-Type: application/json' \
 Deploy to Cloudflare Workers with `npx wrangler deploy`. The endpoint is `/mcp`.
 You can also open it in [MCP Inspector](https://github.com/modelcontextprotocol/inspector).
 
+For clients that start the server themselves, run it over stdio (`npm run stdio`).
+In Claude Desktop, add to `claude_desktop_config.json`:
+
+```json
+{
+  "mcpServers": {
+    "who5-one-tool": { "command": "node", "args": ["/path/to/chatgpt-plugin-one-tool/src/stdio.mjs"] }
+  }
+}
+```
+
+Or in a container: `docker build -t who5-one-tool . && docker run -i --rm who5-one-tool`.
+
 ## Files
 
 - `src/tool.mjs`: the tool definition and the scoring. Start reading here.
 - `src/mcp.mjs`: JSON-RPC over Streamable HTTP: `initialize`, `ping`, `tools/list`, `tools/call`.
 - `src/worker.mjs`: Cloudflare Workers entry.
 - `src/node.mjs`: local run on Node 18+.
+- `src/stdio.mjs`: the same server over stdio, one JSON-RPC message per line.
+- `Dockerfile`: runs the stdio server in a container.
 - `example/plugin.json`, `example/mcp.json`: a submission package template with review test cases.
-- `test/mcp.test.mjs`: protocol and tool tests (`node --test`).
+- `test/mcp.test.mjs`, `test/stdio.test.mjs`: protocol, tool and stdio tests (`node --test`).
 
 ## Design choices
 

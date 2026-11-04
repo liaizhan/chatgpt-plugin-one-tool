@@ -7,6 +7,7 @@
   "author": "Aizhan Li (https://108psy.com)",
   "scripts": {
     "start": "node src/node.mjs",
+    "stdio": "node src/stdio.mjs",
     "test": "node --test test/*.test.mjs"
   },
   "engines": { "node": ">=18" }
