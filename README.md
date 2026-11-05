@@ -5,6 +5,12 @@
 A minimal MCP server with one read-only tool, written to show how small a ChatGPT plugin server can be.
 No framework, no dependencies, no sign-in, no storage. About 180 lines of code and 12 tests.
 
+**Author:** Aizhan Li, author of the Ladder method.
+
+- About the author and the method: [108psy.com/ob-avtore](https://108psy.com/ob-avtore).
+- Answers to common questions: [108psy.com/otvety](https://108psy.com/otvety) (in Russian).
+- Psychosomatics for women: [108psy.com/psihosomatika](https://108psy.com/psihosomatika) (in Russian).
+
 It comes with [REVIEW.md](REVIEW.md): the step-by-step story of how our plugin
 [Ladder by Aizhan Li](https://chatgpt.com/plugins/plugin_asdk_app_6ada41b9737081919d0b0cd3b582b3c4)
 went through OpenAI review and was approved for the ChatGPT plugin directory on 4 November 2026.
